@@ -33,7 +33,7 @@ test:
     - pip check
   requires:
     - pip
-    - psycopg2-binary >= 2.7.3.1
+    - psycopg2-binary >=2.7.3.1
     - python {{ python_min }}
 
 about:

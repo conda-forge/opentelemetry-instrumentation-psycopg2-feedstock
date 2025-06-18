@@ -45,7 +45,5 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/opentelemetry-api
-    - conda-forge/opentelemetry-sdk
-    - conda-forge/opentelemetry-dbapi
     - mariusvniekerk
     - rxm7706

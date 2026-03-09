@@ -20,23 +20,22 @@ requirements:
     - hatchling
     - pip
   run:
-    - psycopg2 >=2.7.3.1
     - python >={{ python_min }}
     - opentelemetry-api >=1.12,<2.dev0
-    - opentelemetry-instrumentation ==0.61b0
-    - opentelemetry-instrumentation-dbapi ==0.61b0
-    # - psycopg2 >=2.7.3.1
+    - opentelemetry-instrumentation =={{ version }}
+    - opentelemetry-instrumentation-dbapi =={{ version }}
 
 test:
   imports:
     - opentelemetry
     - opentelemetry.instrumentation
+    - opentelemetry.instrumentation.psycopg2
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
     - psycopg2-binary >=2.7.3.1
-    - python {{ python_min }}
 
 about:
   summary: OpenTelemetry psycopg2 instrumentation

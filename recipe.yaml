@@ -28,6 +28,7 @@ requirements:
     - opentelemetry-api >=1.12,<2.0
     - opentelemetry-instrumentation ==${{ version }}
     - opentelemetry-instrumentation-dbapi ==${{ version }}
+    - psycopg2-binary >= 2.7.3.1
 
 tests:
   - python:

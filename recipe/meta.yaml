@@ -1,5 +1,5 @@
 {% set name = "opentelemetry-instrumentation-psycopg2" %}
-{% set version = "0.64b0" %}
+{% set version = "0.65b0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_instrumentation_psycopg2-{{ version }}.tar.gz
-  sha256: 57df449718297b93e7bb57c76d3439c475eb5a5451600fcd6a9024d74822d972
+  sha256: 4eba60bef5f25d163a098109c2960773f3753e0b7e39824b9f398ba49ffab783
 
 build:
   noarch: python
@@ -20,10 +20,12 @@ requirements:
     - hatchling
     - pip
   run:
+    - psycopg2
     - python >={{ python_min }}
-    - opentelemetry-api >=1.12,<2.dev0
-    - opentelemetry-instrumentation =={{ version }}
-    - opentelemetry-instrumentation-dbapi =={{ version }}
+    - opentelemetry-api ~=1.12
+    - opentelemetry-instrumentation ==0.65b0
+    - opentelemetry-instrumentation-dbapi ==0.65b0
+    # - psycopg2 >=2.7.3.1
 
 test:
   imports:
